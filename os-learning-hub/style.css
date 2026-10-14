@@ -1,0 +1,44 @@
+:root{--ink:#14232b;--bg:#eef2f1;--teal:#0f8b8d;--amber:#e8a33d;--coral:#d1495b;--mut:#5b6b72}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.55 "Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);display:flex;min-height:100vh}
+#nav{width:270px;flex:none;background:var(--ink);color:#d7e3e6;padding:16px;position:sticky;top:0;height:100vh;overflow:auto;transition:margin .25s}
+body.hide #nav{margin-left:-270px}
+#nav h2{font:700 19px Georgia,serif;color:#fff;margin:4px 0 8px}
+#nav h3{font-size:13px;color:var(--amber);margin:18px 0 6px}
+#nav a{display:block;padding:6px 10px;border-radius:6px;color:inherit;text-decoration:none;cursor:pointer}
+#nav a:hover{background:#223843}#nav a.on{background:var(--teal);color:#fff}
+main{flex:1;min-width:0;padding:0 28px 50px;max-width:1100px}
+header{position:sticky;top:0;z-index:4;background:var(--bg);padding:12px 0;display:flex;gap:14px;align-items:center;color:var(--mut)}
+h1{font:700 30px Georgia,serif;margin:6px 0}.lead{color:var(--mut);max-width:70ch;margin-top:0}
+button,select,input{font:inherit}
+button{background:var(--ink);color:#fff;border:0;border-radius:6px;padding:7px 13px;cursor:pointer}
+button:hover{background:var(--teal)}button:disabled{opacity:.4}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--amber)}
+input,select{padding:5px 8px;border:1px solid #b9c7cb;border-radius:6px;background:#fff}
+.card{background:#fff;border-radius:10px;padding:14px 16px;margin:12px 0;border:1px solid #dbe4e6}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.st{padding:9px 12px;border-left:4px solid #b9c7cb;background:#fff;margin-bottom:6px;cursor:pointer}
+.st.on{border-color:var(--coral);background:#fdecef;font-weight:600}.st.done{border-color:var(--teal)}
+.scene{perspective:1000px;height:360px;display:grid;place-items:center;cursor:grab;touch-action:none}
+.stage{position:relative;width:290px;height:170px;transform-style:preserve-3d}
+.plate{position:absolute;inset:0;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:700;text-align:center;border:2px solid #fff8;cursor:pointer;box-shadow:0 6px 14px #0004}
+.plate.on{filter:brightness(1.3);outline:3px solid #fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.cards .card{margin:0;cursor:pointer}.cards .card.on{border-color:var(--teal);box-shadow:0 0 0 3px #0f8b8d44}
+.nodes{display:flex;gap:10px;flex-wrap:wrap}
+.node{padding:12px 16px;border-radius:8px;background:#dfe8ea;font-weight:600}
+.node.on{background:var(--teal);color:#fff;box-shadow:0 0 0 4px #0f8b8d44}
+.ring{width:180px;height:180px;border-radius:50%;border:6px solid var(--coral);display:grid;place-items:center;transition:.3s}
+.ring div{width:90px;height:90px;border-radius:50%;background:#dfe8ea;display:grid;place-items:center;font-weight:700;text-align:center;font-size:12px}
+.ring.k{border-color:var(--teal)}.ring.k div{background:var(--teal);color:#fff}
+.gantt{display:flex;flex-wrap:wrap;gap:22px 2px;margin:14px 0 24px}
+.gantt i{width:34px;height:34px;display:grid;place-items:center;color:#fff;font:600 12px sans-serif;position:relative;border-radius:4px}
+.gantt s{position:absolute;bottom:-17px;left:0;font:10px sans-serif;color:var(--mut);text-decoration:none}
+.chip{display:inline-block;padding:2px 9px;border-radius:12px;color:#fff;margin:2px;font-weight:600}
+.log{font:13px/1.6 Consolas,monospace;max-height:190px;overflow:auto}
+.bar{height:14px;background:var(--teal);display:flex;border-radius:7px;overflow:hidden}.bar i{background:var(--coral);display:block}
+table{border-collapse:collapse;width:100%}td,th{padding:5px 8px;border-bottom:1px solid #dfe6e8;text-align:left}td input{width:62px}
+.tree ul{list-style:none;padding-left:22px;margin:2px 0;border-left:2px solid #b9c7cb}.tree{padding-left:0}
+.tree span{cursor:pointer;padding:1px 8px;border-radius:5px;display:inline-block}.tree span.on{background:var(--amber)}
+.ok{color:#2b8a4e;font-weight:600}.bad{color:var(--coral);font-weight:600}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}#nav{position:fixed;z-index:9;left:0}main{padding:0 14px}}
